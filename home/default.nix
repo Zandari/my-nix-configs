@@ -5,7 +5,6 @@
     neovim 
     alacritty
     firefox
-    obsidian
     gnome.nautilus
     vesktop
     kotatogram-desktop
@@ -14,8 +13,37 @@
     quickemu
     spice-gtk
     shotman
+    gnome.gnome-disk-utility
+    yandex-disk
+    okular
+    samba
+    libreoffice
+    wl-clipboard
+    xdg-utils
+    qbittorrent
+    gnome.simple-scan
+    appimage-run
+    xwayland
+    xwayland-run
+    prismlauncher
+
+    # Latex stuff
+    texliveFull
+    python311Packages.pygments
+    poppler_utils
+
+    nnn
+    tmux
 
     gcc
+    pkg-config
+    gnumake
+    python3
+    poetry
+    openjdk
+
+    libsForQt5.qt5.qtwayland
+    kdePackages.qtwayland
   ];
 
   home.sessionVariables = {

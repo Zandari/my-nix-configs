@@ -12,8 +12,8 @@
 
   general = {
     border_size = 2;
-    gaps_in = 5;
-    gaps_out = 10;
+    gaps_in = 0;
+    gaps_out = 0;
     "col.active_border" = "rgba(8933a2bb) rgba(d752ffbb) 45deg";
     "col.inactive_border" = "rgba(1d1f21d2) rgba(1d1f21d2)";
     resize_on_border = true;
@@ -43,7 +43,7 @@
   };
 
   animations = {
-    enabled = true;
+    enabled = false;
     # TODO
   };
 
@@ -64,7 +64,7 @@
     "$mod, G, exec, $fileManager"
     "$mod, M, exec, $menu"
     "$mod, C, killactive, "
-    "$mod, K, exit, "
+#   "$mod, K, exit, "
     "$mod, F, togglefloating, "
     "$mod, N, pseudo, "
     "$mod, S, togglesplit, "

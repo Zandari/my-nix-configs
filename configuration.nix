@@ -11,11 +11,7 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
-  boot.kernelParams = ["nvidia-drm.fbdev=1"];
-
- # Nvidia drivers
- #services.xserver.videoDrivers = [ "nvidia" ];
- #services.xserver.dpi = 166;
+  #boot.kernelParams = ["nvidia-drm.fbdev=1"];
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -55,14 +51,12 @@
     };
   };
 
-  virtualisation.waydroid.enable = true;
-
   console.useXkbConfig = true;
 
   users.users.zandari = {
     isNormalUser = true;
     description = "zandari";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "scanner" "lp"];
     packages = with pkgs; [];
   };
 
@@ -80,6 +74,7 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = ["CascadiaMono"]; })
+    liberation_ttf
   ];
 
   environment.sessionVariables = {
@@ -89,13 +84,25 @@
 
   hardware = {
     opengl.enable = true;
-    nvidia.modesetting.enable = true;
+    opengl.driSupport = true; 
+    opengl.driSupport32Bit = true; 
+
+    nvidia = {
+     modesetting.enable = true; 
+    #powerManagement.enable = false; 
+    #powerManagement.finegrained = false; 
+    #open = true; 
+     nvidiaSettings = true; 
+     package = config.boot.kernelPackages.nvidiaPackages.stable; 
+    };
 
     pulseaudio.enable = true;
     pulseaudio.support32Bit = true;
 
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
+
+    sane.enable = true;
   };
 
 
