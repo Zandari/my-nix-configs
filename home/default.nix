@@ -26,6 +26,11 @@
     xwayland
     xwayland-run
     prismlauncher
+    vivaldi
+    font-manager
+    webcord
+    ciscoPacketTracer8
+    virtualbox
 
     # Latex stuff
     texliveFull

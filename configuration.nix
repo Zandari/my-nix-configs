@@ -38,7 +38,10 @@
     blueman.enable = true;
     pipewire = {
       enable = true;
-      wireplumber.enable = true;
+      wireplumber.enable = true;    
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
 
     xserver = {
@@ -96,7 +99,7 @@
      package = config.boot.kernelPackages.nvidiaPackages.stable; 
     };
 
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
     pulseaudio.support32Bit = true;
 
     bluetooth.enable = true;

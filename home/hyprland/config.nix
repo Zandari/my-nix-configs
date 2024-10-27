@@ -1,6 +1,6 @@
 {
   # Defining monitor
-  monitor = ",preferred,auto,auto";
+  monitor = ",preferred,auto,auto,bitdepth,10";
   
   # Defining programs
   "$terminal" = "alacritty";
